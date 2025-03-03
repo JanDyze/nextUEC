@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, ChevronLeft, User, LogOut, RefreshCcw } from "lucide-react";
+import { Menu, ChevronLeft, User, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Button from "@/components/Button";
 import Image from "next/image";
