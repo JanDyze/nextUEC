@@ -1,24 +1,126 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Default Light Theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ecf1ff;
+  --foreground: #004f6b;
+  --main: #ecf1ff; /* sky-600 */
+  --main-hover: #00434f; /* Darker sky */
+  --primary: #caedff; /* sky-600 */
+  --primary-hover: #9cd7f5; /* Darker sky */
+  --secondary: #ffe5e5; /* orange-200 */
+  --secondary-hover: #ffbcbc; /* Darker orange */
+  --accent: #F59E0B; /* amber */
+  --accent-hover: #d97706; /* Darker amber */
+  --muted: #6B7280; /* gray */
+  --muted-hover: #4b5563; /* Darker gray */
+
+  --info: #0EA5E9; /* sky-500 */
+  --info-hover: #0284c7; /* Darker sky */
+  --success: #10B981; /* emerald-500 */
+  --success-hover: #059669; /* Darker emerald */
+  --warning: #FBBF24; /* yellow-400 */
+  --warning-hover: #d97706; /* Darker yellow */
+  --danger: #EF4444; /* red-500 */
+  --danger-hover: #b91c1c; /* Darker red */
+
+  --border: #00236a; /* gray-200 */
+  --input: #F3F4F6; /* gray-100 */
+  --card: #ffffff; /* gray-50 */
+  --card-inner: #f3f4f6; /* Light gray */
+
+  --light: #ffffff;
+  --dark: #020f1c;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Dark Mode */
+.dark {
+  --background: #020f1c;
+  --foreground: #ededed;
+
+  --main: #020f1c; /* sky-500 */
+  --main-hover: #b8ddfb; /* Darker sky */
+  --primary: #006d9f; /* sky-500 */
+  --primary-hover: #00507a; /* Darker sky */
+  --secondary: #ff4949; /* amber-500 */
+  --secondary-hover: #cc3737; /* Darker amber */
+  --accent: #FACC15; /* yellow-400 */
+  --accent-hover: #eab308; /* Darker yellow */
+  --muted: #9CA3AF; /* gray-400 */
+  --muted-hover: #6b7280; /* Darker gray */
+
+  --info: #217396; /* sky-400 */
+  --info-hover: #0284c7; /* Darker sky */
+  --success: #006c28; /* emerald-400 */
+  --success-hover: #16a34a; /* Darker emerald */
+  --warning: #983f00; /* yellow-300 */
+  --warning-hover: #9f4a00; /* Darker yellow */
+  --danger: #a81c1c; /* red-600 */
+  --danger-hover: #b91c1c; /* Darker red */
+
+  --border: #cfcfcf; /* gray-700 */
+  --input: #1F2937; /* gray-800 */
+  --card: #111827; /* gray-900 */
+  --card-inner: #1f2937; /* Slightly lighter than #111827 */
+
+  --light: #ecf1ff;
+  --dark: #000000;
 }
 
+/* Apply Colors */
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, sans-serif;
+}
+
+/* Utility Classes */
+.text-main { color: var(--main); }
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--secondary); }
+.text-accent { color: var(--accent); }
+.text-muted { color: var(--muted); }
+.text-info { color: var(--info); }
+.text-success { color: var(--success); }
+.text-warning { color: var(--warning); }
+.text-danger { color: var(--danger); }
+
+.bg-main { background-color: var(--main); }
+.bg-primary { background-color: var(--primary); }
+.bg-secondary { background-color: var(--secondary); }
+.bg-accent { background-color: var(--accent); }
+.bg-muted { background-color: var(--muted); }
+.bg-info { background-color: var(--info); }
+.bg-success { background-color: var(--success); }
+.bg-warning { background-color: var(--warning); }
+.bg-danger { background-color: var(--danger); }
+
+.border { border-color: var(--border); }
+.bg-input { background-color: var(--input); }
+.bg-card { background-color: var(--card); }
+.bg-card-inner { background-color: var(--card-inner); }
+
+.bg-light { background-color: var(--light); }
+.bg-dark { background-color: var(--dark); }
+
+/* Hover Colors */
+.hover\:bg-main:hover { background-color: var(--main-hover); }
+.hover\:bg-primary:hover { background-color: var(--primary-hover); }
+.hover\:bg-secondary:hover { background-color: var(--secondary-hover); }
+.hover\:bg-accent:hover { background-color: var(--accent-hover); }
+.hover\:bg-muted:hover { background-color: var(--muted-hover); }
+.hover\:bg-info:hover { background-color: var(--info-hover); }
+.hover\:bg-success:hover { background-color: var(--success-hover); }
+.hover\:bg-warning:hover { background-color: var(--warning-hover); }
+.hover\:bg-danger:hover { background-color: var(--danger-hover); }
+
+.bg-inverse { background-color: var(--main-hover); }
+
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
