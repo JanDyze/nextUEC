@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home, User, LogOut, Menu } from "lucide-react";
+// import { Home, User, LogOut, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/constants/navLinks";

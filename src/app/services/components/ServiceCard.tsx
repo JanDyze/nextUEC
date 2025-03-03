@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image';
-import Chart from './PieChart';
+// import Chart from './PieChart';
 import Button from '@/components/Button';
-import Avatars from './Avatars';
+// import Avatars from './Avatars';
 import { ExternalLink, EllipsisVertical } from 'lucide-react';
 
 function ServiceCard() {

@@ -14,7 +14,6 @@ const PurposeCard = () => {
     const [displayText, setDisplayText] = useState("");
 
     const text = isMission ? missionText : visionText;
-
     useEffect(() => {
         setDisplayText("");
         let i = 0;
@@ -23,9 +22,10 @@ const PurposeCard = () => {
             i++;
             if (i >= text.length) clearInterval(interval);
         }, 50);
-
+    
         return () => clearInterval(interval);
-    }, [isMission, isCollapsed]);
+    }, [isMission, isCollapsed, text]); // Added 'text' as a dependency
+    
 
     return (
         <div

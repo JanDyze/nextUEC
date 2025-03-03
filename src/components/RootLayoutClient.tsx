@@ -19,6 +19,16 @@ export default function RootLayoutClient({ children }: { children: React.ReactNo
     }
   }, [isMobile]);
 
+
+  useEffect(() => {
+    if (showModal) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    return () => document.body.classList.remove("overflow-hidden"); // Cleanup on unmount
+  }, [showModal]);
+
   if (isLoading) {
     return (
       <div className="flex h-screen w-screen items-center justify-center bg-background">
@@ -38,7 +48,7 @@ export default function RootLayoutClient({ children }: { children: React.ReactNo
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-999 ">
           <div className="bg-card rounded-lg p-6 shadow-lg max-w-md w-full">
             <h2 className="text-xl font-semibold">Notice: Static Data</h2>
             <p className="mt-2 text-gray-600">

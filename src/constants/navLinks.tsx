@@ -1,4 +1,4 @@
-import { Home, User, Settings, Church } from "lucide-react";
+import { User, Church } from "lucide-react";
 
 export const navLinks = [
   { href: "/dashboard", icon: <Church className="h-6 w-6" />, label: "Dashboard" },
